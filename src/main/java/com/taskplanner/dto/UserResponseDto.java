@@ -1,24 +1,15 @@
-package com.taskplanner.entity;
-
+package com.taskplanner.dto;
 
 import com.taskplanner.enums.Role;
-import jakarta.persistence.*;
+import lombok.Data;
 
-
-@Entity
-public class Users {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+@Data
+public class UserResponseDto {
     private Long id;
-
     private String name;
-
-    @Column(unique = true, nullable = false)
     private String email;
-
-    @Enumerated(EnumType.STRING)
     private Role role;
+
 
     public Long getId() {
         return id;
@@ -52,5 +43,3 @@ public class Users {
         this.role = role;
     }
 }
-
-
