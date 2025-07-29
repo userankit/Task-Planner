@@ -20,12 +20,12 @@ public class UserController {
         this.userService = userService;
     }
 
-    @PostMapping
-    public ResponseEntity<UserResponseDto> createUser(@RequestBody @Valid UserRequestDto requestDTO) {
+    @PostMapping("/create")
+    public ResponseEntity<UserResponseDto> createUser(@RequestBody  UserRequestDto requestDTO) {
         return new ResponseEntity<>(userService.createUsers(requestDTO), HttpStatus.CREATED);
     }
 
-    @GetMapping
+    @GetMapping("/users")
     public ResponseEntity<List<UserResponseDto>> getAllUsers() {
         return ResponseEntity.ok(userService.getAllUsers());
     }

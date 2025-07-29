@@ -2,11 +2,17 @@ package com.taskplanner.entity;
 
 import com.taskplanner.enums.TaskStatus;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
+@Builder
+@Data
 public class Task {
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,6 +33,4 @@ public class Task {
         private Project project;
 
         private LocalDateTime createdAt;
-
-
 }
